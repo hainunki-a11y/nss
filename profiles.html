@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSS TSEC | Profiles | Faculty & Student Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top p-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center py-3" href="index.html">
+                <img src="assets/img/nss-logo.svg" alt="NSS Logo" height="45">
+                <h5 class="m-0 ms-2 fw-bold" style="color:#1e2a3e;">NSS Unit TSEC</h5>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nssNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nssNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profiles.html">Profiles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="text-center mb-5"><h2 class="fw-bold" style="color:var(--nss-blue);"><i class="fas fa-user-tie me-2"></i> Faculty & Core Team</h2><p>Meet the dedicated minds behind NSS TSEC's social initiatives</p></div>
+        <div class="row g-4" id="facultyContainer"></div>
+        <div class="text-center mt-5"><h3 class="fw-bold" style="color:var(--nss-red);">Student Executive Committee</h3></div>
+        <div class="row g-4 mt-2" id="studentContainer"></div>
+    </div>
+
+    <footer class="footer pt-5 pb-3 mt-5">
+        <div class="container"><div class="row"><div class="col-md-6"><img src="assets/img/nss-logo.svg" height="40" alt="logo"><p class="mt-3">National Service Scheme, TSEC – committed to social responsibility and community building.</p></div><div class="col-md-3"><h5>Quick Links</h5><ul class="list-unstyled"><li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li><li><a href="profiles.html" class="text-white-50 text-decoration-none">Profiles</a></li><li><a href="activities.html" class="text-white-50 text-decoration-none">Activities</a></li></ul></div><div class="col-md-3"><h5>Follow Us</h5><div><a href="#" class="text-white-50 me-3"><i class="fab fa-instagram fa-lg"></i></a><a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin"></i></a></div></div></div><hr class="bg-secondary"><div class="text-center small">© 2025 NSS Unit, Thakur Shyamnarayan Engineering College | Designed for Social Impact</div></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const facultyTeam = [
+            { name: "Dr. Sudhir Thakre", designation: "NSS Programme Officer", qualification: "Training & Placement Officer, NSS Coordinator", image: "https://randomuser.me/api/portraits/men/32.jpg" },
+            { name: "Prof. Rita Vora", designation: "Co-Programme Officer", qualification: "Social Outreach Lead", image: "https://randomuser.me/api/portraits/women/68.jpg" },
+            { name: "Mr. Kashif Sheikh", designation: "Activity Coordinator", qualification: "NSS Mentor", image: "https://randomuser.me/api/portraits/men/45.jpg" }
+        ];
+        const studentLeaders = [
+            { name: "Aayush Gajjar", role: "NSS President", img: "https://randomuser.me/api/portraits/men/11.jpg" },
+            { name: "Aditi Sah", role: "Vice President (PR)", img: "https://randomuser.me/api/portraits/women/44.jpg" },
+            { name: "Neeti Parmar", role: "Secretary", img: "https://randomuser.me/api/portraits/women/33.jpg" },
+            { name: "Bhaskar Nemani", role: "Event Management Head", img: "https://randomuser.me/api/portraits/men/22.jpg" },
+            { name: "Shravani Patil", role: "Volunteer Coordinator", img: "https://randomuser.me/api/portraits/women/55.jpg" },
+            { name: "Rishabh Singh", role: "Media & Documentation", img: "https://randomuser.me/api/portraits/men/77.jpg" }
+        ];
+        let facultyHtml = "";
+        facultyTeam.forEach(f => { facultyHtml += `<div class="col-md-4"><div class="profile-card"><img src="${f.image}" class="profile-img" alt="${f.name}"><h5 class="fw-bold">${f.name}</h5><p class="text-danger">${f.designation}</p><small>${f.qualification}</small></div></div>`; });
+        document.getElementById("facultyContainer").innerHTML = facultyHtml;
+        let studentHtml = "";
+        studentLeaders.forEach(s => { studentHtml += `<div class="col-md-3"><div class="profile-card"><img src="${s.img}" class="profile-img" alt="${s.name}"><h6 class="fw-bold">${s.name}</h6><p class="text-muted small">${s.role}</p></div></div>`; });
+        document.getElementById("studentContainer").innerHTML = studentHtml;
+    </script>
+</body>
+</html>
